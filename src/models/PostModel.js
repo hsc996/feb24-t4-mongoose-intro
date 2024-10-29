@@ -11,7 +11,7 @@ const PostSchema = mongoose.Schema({
         trim: true
     },
     content: {
-        title: String,
+        type: String,
         required: true,
         minLength: 4,
         trim: true
@@ -28,6 +28,6 @@ const PostSchema = mongoose.Schema({
 const PostModel = mongoose.model("Post", PostSchema)
 
 // 3. Export the model for the rest of our code to use
-modeul.exports = {
+module.exports = {
     PostModel
 }
