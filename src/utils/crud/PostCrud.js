@@ -1,6 +1,6 @@
 // Provide CRUD functions for the PostModel
 
-const { PostModel } = require("../../models/PostModel")
+const { PostModel } = require("../models/PostModel")
 
 
 async function createPost (title, content = null) {
@@ -13,12 +13,19 @@ async function createPost (title, content = null) {
     return result;
 }
 
-async function findOnePost () {
+// "query" in mongoose is just an object - by using this as the parameter, it's flexible to the request
+// findOnePost({title: "Alex's Cool Blog Post"})
+async function findOnePost (query) {
+    let result = await PostModel.findOne(query);
+
+    return result;
 
 }
 
-async function findManyPosts () {
-
+async function findManyPosts (query) {
+    let result = await PostModel.find(query);
+    
+    return result;
 }
 
 async function updatePost () {
