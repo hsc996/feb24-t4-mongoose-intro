@@ -6,12 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "seed": "node src/utils/seeding.js",
+    "start:seed": "npm run seed && npm run start",
+    "damian-example": "node src/utils/seeding.js && node src/index.js",
+    "example-chain": "npm run seed && npm run start",
+    "db:drop": "node src/utils/dropping.js",
+    "db:drop-and-seed": "npm run db:drop && npm run seed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mongoose": "^8.7.3"
   },

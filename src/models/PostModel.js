@@ -10,12 +10,7 @@ const PostSchema = mongoose.Schema({
         minLength: 4,
         trim: true
     },
-    content: {
-        type: String,
-        required: true,
-        minLength: 4,
-        trim: true
-    },
+    content: String,
     date: {
         type: Date,
         default: Date.now // Mongoose will run Date.now every time we make a doc
@@ -26,6 +21,7 @@ const PostSchema = mongoose.Schema({
 
 // 2. Make a model based on the schema
 const PostModel = mongoose.model("Post", PostSchema)
+
 
 // 3. Export the model for the rest of our code to use
 module.exports = {
