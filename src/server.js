@@ -10,6 +10,9 @@ app.get("/", (request, response) => {
     });
 });
 
+const PostController = require("./controllers/PostController");
+app.use("/posts", PostController);
+
 module.exports = { app }
 
 // Server app configuration is finished by this point
