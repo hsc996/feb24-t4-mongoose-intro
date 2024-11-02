@@ -16,6 +16,11 @@ const PostSchema = mongoose.Schema({
         default: Date.now // Mongoose will run Date.now every time we make a doc
         // default: new Date(Date.now()) // Mongoose will run Date.now once when the app loads this file
     },
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    }
 
 });
 

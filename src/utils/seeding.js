@@ -1,7 +1,6 @@
 const { createPost } = require("./crud/PostCrud");
 const { dbConnect, dbDisconnect } = require("./database");
 
-
 async function seed(){
 
     // await dbConnect()
@@ -15,3 +14,5 @@ dbConnect().then(() => {
     console.log("Connected to DB, seeding now!");
     seed();
 });
+
+require("dotenv").config();
