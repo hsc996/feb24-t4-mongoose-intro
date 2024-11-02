@@ -1,5 +1,4 @@
-const { dbDrop } = require("./database");
-const { dbConnect, dbDisconnect } = require("./database");
+const { dbDrop, dbConnect, dbDisconnect } = require("./database");
 
 
 async function drop(){
